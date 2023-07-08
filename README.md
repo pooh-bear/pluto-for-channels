@@ -10,7 +10,7 @@ This simple Docker image will generate an M3U playlist and EPG optimized for use
 
 Running the container is easy. Fire up the container as usual. You can set which port it runs on.
 
-    docker run -d --restart unless-stopped --name pluto-for-channels -p 8080:80 jonmaddox/pluto-for-channels
+    docker run -d --restart unless-stopped --name pluto-for-channels -p 8080:80 gabepb/pluto-for-channels
 
 You can retrieve the playlist and EPG via the status page.
 
@@ -22,19 +22,19 @@ By using the `VERSIONS` env var when starting the docker container, you can tell
 
 Simply provide a comma separated list of words without spaces with the `VERSIONS` env var.
 
-    docker run -d --restart unless-stopped --name pluto-for-channels -p 8080:80 -e VERSIONS=Dad,Bob,Joe jonmaddox/pluto-for-channels
+    docker run -d --restart unless-stopped --name pluto-for-channels -p 8080:80 -e VERSIONS=Dad,Bob,Joe gabepb/pluto-for-channels
 
 ### Optionally provide a starting channel number
 
 By using the `START` env var when starting the docker container, you can tell it to start channel numbers with this value. Original Pluto channel numbers will be added to this, keeping all of the channels in the same order they are on Pluto.
 
-You should use a starting number greater than 10000, so that the channel numbers will be preserved but not conflict with any other channels you may have.
+You should use a starting number greater than 10000, so that the channel numbers will be preserved but not conflict with any other channels you may have.~
 
 For example, channel 345 will be 10345. Channel 2102 will be 12102.
 
 Simpley provide a starting number with the `START` env var.
 
-    docker run -d --restart unless-stopped --name pluto-for-channels -p 8080:80 -e START=80000 jonmaddox/pluto-for-channels
+    docker run -d --restart unless-stopped --name pluto-for-channels -p 8080:80 -e START=80000 gabepb/pluto-for-channels
 ### Optionally exclude channel categories
 
 By using the `EXCLUDE_CATEGORIES` environment variable when starting the docker container,
@@ -46,7 +46,7 @@ Provide a comma separated list of categories:
 
 If running via docker on the command line:
 
-    docker run -d --restart unless-stopped --name pluto-for-channels -p 8080:80 -e "EXCLUDE_CATEGORIES=Kids,En Español,Music,Gaming + Anime" jonmaddox/pluto-for-channels
+    docker run -d --restart unless-stopped --name pluto-for-channels -p 8080:80 -e "EXCLUDE_CATEGORIES=Kids,En Español,Music,Gaming + Anime" gabepb/pluto-for-channels
 
 
 ## Add Source to Channels

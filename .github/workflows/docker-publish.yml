@@ -36,4 +36,4 @@ jobs:
         push: true
         tags: |
           ${{ steps.docker_meta.outputs.tags }}
-          ${{ 'jonmaddox/pluto-for-channels:latest' }}
+          ${{ 'gabepb/pluto-for-channels:latest' }}
